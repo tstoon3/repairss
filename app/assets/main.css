@@ -1,6 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
-body{
-background-color: #ffe62b;
-background-color: linear-gradient(180deg,rgba(255, 230, 43, 0.8) 20%, rgba(37, 24, 108, 0.8) 80%);
+:root{
+  --glass-bg: rgba(255,255,255,.12);   /* สีพื้นแก้ว */
+  --glass-bg-dark: rgba(17,17,17,.18);
+  --glass-border: rgba(255,255,255,.35);
+  --glass-border-dark: rgba(255,255,255,.15);
+  --glass-highlight: rgba(255,255,255,.65);
+  --glass-shadow: rgba(0,0,0,.25);
+  --blur-md: 16px;
+  --blur-lg: 22px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+  --stroke: 1px;
+
+  /* โทนแอ็กเซนต์ (ปรับได้ตามแบรนด์/ธีม) */
+  --accent1: rgba(255, 230, 43, 1);   /* เหลือง */
+  --accent2: rgba(37, 24, 108, 1);    /* น้ำเงินอมม่วง */
 }
+
+/* พื้นหลังแนว iOS (แนะนำสำหรับ page) */
+.bg-ios {
+  min-height: 100dvh;
+  background:
+    radial-gradient(70vmax 70vmax at 15% 10%, color-mix(in srgb, var(--accent1) 60%, white 40%), transparent 60%),
+    radial-gradient(80vmax 80vmax at 85% 80%, color-mix(in srgb, var(--accent2) 75%, black 25%), transparent 60%),
+    linear-gradient(120deg, color-mix(in srgb, var(--accent2) 85%, black 15%), color-mix(in srgb, var(--accent1) 20%, white 80%));
+}
+
+
+.kanit-thin {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
