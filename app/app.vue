@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import Comform_ip from './component/comform_ip.vue';
 import Repairlist from './component/repairlist.vue';
-import repairlist from './component/repairlist.vue';
 import Index from './index.vue';
-
 
 </script>
 <template>
