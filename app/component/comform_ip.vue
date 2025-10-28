@@ -9,6 +9,7 @@ function resetForm() {
   });
 }
 
+
 const name = ref("");
 const station = ref("");
 const building = ref("");
@@ -37,6 +38,7 @@ const submitForm = async () => {
      if (response.ok) {
       alert("บันทึกสำเร็จ!");
       resetForm();
+
     } else {
       alert("เกิดข้อผิดพลาดในการบันทึก");
     }
@@ -70,10 +72,10 @@ const submitForm = async () => {
           <label for="service_list" class="block mb-1 text-sm sm:text-base font-medium text-gray-700">
             ประเภทการรับบริการ :
           </label>
-          <select name="service_list" id="service_list"
+          <select v-model="service_type" name="service_type" id="service_type"
             class="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
             required>
-            <option value="" disabled selected>-- เลือกหัวข้อ --</option>
+            <option value="" disabled>-- เลือกหัวข้อ --</option>
             <option value="computerPC">คอมพิวเตอร์ PC</option>
             <option value="network">อินเตอร์เน็ต</option>
             <option value="printer">Printer</option>

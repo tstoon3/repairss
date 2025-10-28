@@ -38,7 +38,6 @@ onMounted(fetchRepairs);
 <template>
   <div class="p-6">
     <h2 class="text-xl font-bold mb-4">📋 รายการแจ้งซ่อม</h2>
-
     <div class="overflow-x-auto">
       <table class="min-w-full border border-gray-200 rounded-lg shadow">
         <thead class="bg-gray-100 text-gray-700">
