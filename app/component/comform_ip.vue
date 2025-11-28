@@ -21,7 +21,7 @@ const note = ref("");
 
 const submitForm = async () => {
   try{
-    const response = await fetch("http://localhost:4000/api/postrepairs", {
+    const response = await fetch("http://localhost:4000/api_cases/postrepairs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -52,9 +52,9 @@ const submitForm = async () => {
 </script>
 
 <template>
-  <div class="flex items-center justify-center p-4">
+  <div class="flex items-center justify-center p-6 py-16">
     <div class="bg-white shadow-lg rounded-xl p-6 sm:p-8 w-full max-w-md">
-      <h2 class="text-xl sm:text-2xl font-semibold text-center text-blue-600 mb-4">
+      <h2 class="text-xl sm:text-2xl font-semibold text-center text-black mb-4">
         บันทึกแจ้งซ่อม
       </h2>
       <form @submit.prevent="submitForm" class="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
@@ -87,7 +87,7 @@ const submitForm = async () => {
         </div><input v-model="note" type="text" placeholder="รายละเอียด"
           class="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 text-sm sm:text-base" required />
         <button 
-          class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 text-sm sm:text-base">
+          class="w-full border border-black text-white py-2 rounded hover:bg-white transition bg-gray-800 hover:text-gray-800 text-sm sm:text-base">
           ส่งข้อมูล
         </button>
       </form>

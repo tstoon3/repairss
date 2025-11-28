@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import Comform_ip from './component/comform_ip.vue';
+import Navbar from './component/navbar.vue';
 import Repairlist from './component/repairlist.vue';
-import Index from './index.vue';
 
 </script>
 <template>
-  <NuxtLayout />
   <body>
     <div class="min-h-screen">
-      <Index />
+      <Navbar />
       <Comform_ip />
        <Repairlist />
     </div>

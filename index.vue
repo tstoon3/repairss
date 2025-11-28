@@ -8,5 +8,6 @@
     <link href="/src/styles.css" rel="stylesheet">
     <title>หน้าแรก - ระบบแจ้งซ่อม</title>
   </head>
+  
 </html>
 </template>

@@ -16,7 +16,7 @@ const repairs = ref<RepairItem[]>([]);
 // ฟังก์ชันดึงข้อมูลจาก API
 const fetchRepairs = async () => {
   try {
-    const res = await fetch("http://localhost:4000/api/repairs");
+    const res = await fetch("http://localhost:4000/api_cases/getrepairs");
     const data: RepairItem[] = await res.json(); // แปลงเป็น JSON แล้วเก็บ
     repairs.value = data;
   } catch (err) {
@@ -32,6 +32,8 @@ datetime ? new Date(datetime).toLocaleTimeString("th-TH", { hour12: false }) : "
 
 // ดึงข้อมูลทันทีเมื่อ component ถูก mount
 onMounted(fetchRepairs);
+
+//เหลือ table รีเซ็ท
 
 </script>
 
