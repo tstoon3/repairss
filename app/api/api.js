@@ -13,6 +13,12 @@ app.use(express.json());
 app.use("/api_cases",repairsRoutes);
 app.use("/api_users",usersRoutes);
 
+app.use((req, res, next) => {
+  console.log("HEADERS:", req.headers["content-type"]);
+  next();
+});
+
+
 app.listen(port, () => {
   console.log(`🚀 Server running at http://localhost:${port}`);
 }); 

@@ -17,7 +17,9 @@ const users = ref<Users[]>([]);
     <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
       <!-- โลโก้ -->
       <div class="text-2xl font-bold text-black">
+        <NuxtLink to ="/">
         Guest
+        </NuxtLink>
       </div>
 
       <!-- ปุ่มเข้าสู่ระบบ -->
@@ -26,10 +28,10 @@ const users = ref<Users[]>([]);
           class="border border-black text-white px-3 py-1 rounded-lg hover:bg-white hover:text-gray-800 transition bg-gray-800 text-sm">
           เข้าสู่ระบบ
         </NuxtLink>
-        <button
+        <NuxtLink to="register"
           class="border border-black text-white px-3 py-1 rounded-lg hover:bg-white hover:text-gray-800 transition bg-gray-800 text-sm">
           สมัครสมาชิก
-        </button>
+        </NuxtLink>
       </div>
     </div>
   </nav>
