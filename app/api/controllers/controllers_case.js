@@ -2,7 +2,7 @@ import pool from "../configdb.js";
 
  export const getRepairs = async (req,res) =>{
     try {
-    const result = await pool.query("SELECT * FROM case_repairs ORDER BY id DESC"); // 👈 ชื่อตารางคุณ
+    const result = await pool.query("SELECT * FROM case_repairs ORDER BY case_id DESC"); // 👈 ชื่อตารางคุณ
     res.json(result.rows);
   } catch (err) {
     console.error(err);

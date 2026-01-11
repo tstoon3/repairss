@@ -2,7 +2,7 @@
 import { ref, onMounted } from "vue";
 
 interface RepairItem {
-  id: number;
+  case_id: number;
   service_type: string | null;
   name: string;
   status: string | null;
@@ -54,8 +54,8 @@ onMounted(fetchRepairs);
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-200">
-          <tr v-for="item in repairs" :key="item.id" class="hover:bg-gray-50">
-            <td class="px-4 py-2">{{ item.id }}</td>
+          <tr v-for="item in repairs" :key="item.case_id" class="hover:bg-gray-50">
+            <td class="px-4 py-2">{{ item.case_id }}</td>
             <td class="px-4 py-2">{{ item.service_type }}</td>
             <td class="px-4 py-2">{{ item.name }}</td>
             <td class="px-4 py-2 truncate max-w-[200px]">{{ item.note }}</td>
