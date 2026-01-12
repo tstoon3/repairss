@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 
 export const getUsers = async (req, res) => {
   try {
-    const result = await pool.query("SELECT name FROM Users");
+    const result = await pool.query("SELECT name FROM users");
     res.json(result.rows);
   } catch (err) {
     console.error(err);
@@ -25,6 +25,17 @@ export const postUserid = async (req, res) => {
         return res.status(400).json({
             message:"รหัสผ่านไม่ตรงกัน"
         })
+    }
+
+    const checkUser = await pool.query(
+      "SELECT user_id FROM users WHERE username = $1",
+      [username]
+    );
+
+    if (checkUser.rowCount > 0) {
+      return res.status(409).json({
+        message: "ชื่อผู้ใช้นี้ถูกใช้งานแล้ว",
+      });
     }
 
     const saltRound = 10;

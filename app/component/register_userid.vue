@@ -1,15 +1,9 @@
 <script setup="ts">
 import { errorMessages } from 'vue/compiler-sfc';
-import Register_detail from './register_detail.vue';
-
-
 
 const username = ref("");
 const password = ref("");
 const confpassword = ref("");
-
-const showcomid = ref(true);
-const showcomDetail = ref(false);
 
 const submitUserid = async () => {
     if (password.value !== confpassword.value) {
@@ -29,7 +23,7 @@ const submitUserid = async () => {
         });
         if (response.ok) {
             alert("กรุณากรอกเพื่อบันทึกข้อมูลใช้ครั้งถัดไป")
-            showcomDetail.value = true
+            navigateTo('/ip_detail')
 
         } else {
             alert("เกิดข้อผิดพลาดในการบันทึก");
@@ -56,7 +50,7 @@ const submitUserid = async () => {
             <h2 class="text-xl sm:text-2xl font-semibold text-center text-black mb-4">
                 สมัครสมาชิก
             </h2>
-            <form v-if="showcomid" @submit.prevent="submitUserid" class="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
+            <form @submit.prevent="submitUserid" class="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
                 <input v-model="username" type="text" placeholder="ชื่อผู้ใช้"
                     class="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                     required />
@@ -70,7 +64,6 @@ const submitUserid = async () => {
                     class="w-full border border-black text-white py-2 rounded hover:bg-white transition bg-gray-800 hover:text-gray-800 text-sm sm:text-base">
                     ถัดไป
                 </button>
-                <Register_detail v-if="showcomDetail"/>
                 
                 
             </form>
